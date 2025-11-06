@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/serveSpaceLogo.png';
+import profile from '../../assets/profile.png';
+import { ChevronRight } from 'lucide-react';
 import { LayoutDashboard, Lightbulb, MessageCircleQuestionMark, Bell, Settings, MessageSquare, LogOut } from 'lucide-react';
 const SideMenu = () => {
     const navigate = useNavigate();
@@ -32,8 +34,8 @@ const SideMenu = () => {
                             key={index}
                             onClick={() => navigate(item.path)}
                             className={`flex gap-3 text-gray-700 px-4 py-2 rounded-lg transition-all ${isActive
-                                    ? 'bg-gray-200 text-blue-500'
-                                    : 'hover:text-blue-400 hover:bg-gray-200'
+                                ? 'bg-gray-200 text-blue-500'
+                                : 'hover:text-blue-400 hover:bg-gray-200'
 
                                 }`}
                         >
@@ -46,14 +48,18 @@ const SideMenu = () => {
 
 
             </nav>
-                            {/* <div className='bg-cyan-200 rounded-lg flex flex-row'>
-                    <div className='bg-blue-700 rounded-full'></div>
-                    <div></div>
-                    <h1 ></h1>
-
-
+            <div className='flex flex-row bg-cyan-200 rounded shadow-lg p-2 gap-2 mt-auto'>
+                <img
+                    className='w-8 h-8 rounded-full object-cover'
+                    src={profile}
+                />
+                <div>
+                    <p className='text-sm font-medium text-gray-900'>Kyomuhendo Precious</p>
+                    <p className='text-xs text-gray-700'>Freelancer</p>
                 </div>
- */}
+                {/* <ChevronRight size={20} className='items-center justify-center'/> */}
+
+            </div>
 
         </div>
     );

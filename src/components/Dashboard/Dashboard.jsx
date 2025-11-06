@@ -1,4 +1,5 @@
 import { Plus } from "lucide-react";
+import { Events } from "./DashboardOverview";
 
 const Dashboard = () => {
     const stats = [
@@ -34,10 +35,10 @@ const Dashboard = () => {
     ]
     
     return (
-        <div className="p-2">
+        <div className="flex flex-col p-2 space-y-4">
             <div className="flex gap-6 items-start">
                 <div className="flex flex-col">
-                    <h1 className="font-semibold text-3xl mb-2">Share your Ideas</h1>
+                    <h1 className="font-semibold text-3xl mb-2 ">Share your Ideas</h1>
                     <p className="text-gray-500">Have an idea worth building?<br/>Submit it and start innovating</p>
                 </div>
 
@@ -53,7 +54,7 @@ const Dashboard = () => {
                                         {stat.count}
                                     </span>
                                 </div>
-                                <h3 className="text-gray-900 font-semibold text-sm mb-1">
+                                <h3 className="text-gray-900 font-semibold text-xs mb-1">
                                     {stat.label}
                                 </h3>
                                 {/* <p className="text-gray-500 text-xs">{stat.description}</p> */}
@@ -67,6 +68,8 @@ const Dashboard = () => {
                     <p className="text-sm text-center">Create new Idea</p>
                 </div>
             </div>
+            <Events/>
+            
         </div>
     )
 }
