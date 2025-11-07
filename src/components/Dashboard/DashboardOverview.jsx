@@ -1,6 +1,7 @@
-import { ChevronDown, CalendarDays, Clock, MessageSquare } from "lucide-react"
+import { ChevronDown, CalendarDays, Clock, MessageSquare, ScrollText } from "lucide-react"
 import ideas from '../../assets/ideas.png'
 import Hackathon from '../../assets/Hackathon.png'
+
 
 
 export const Events = () => {
@@ -62,7 +63,7 @@ export const Events = () => {
                         <img
                             src={item.image}
                             alt={item.title}
-                            className="w-36 h-auto object-cover flex-shrink-0"
+                            className="w-40 h-auto object-cover flex-shrink-0"
                         />
 
                         <div className="flex flex-col flex-1 p-4">
@@ -125,7 +126,7 @@ export const Feedback = () => {
                         className="flex items-start gap-3 p-3 hover:bg-gray-100 cursor-pointer transition-colors"
                     >
                         <div className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center flex-shrink-0">
-                            <MessageSquare size={16} className="text-gray-600" />
+                            <ScrollText size={16} className="text-gray-600" />
                         </div>
 
                         <div className="flex flex-col gap-0.5">

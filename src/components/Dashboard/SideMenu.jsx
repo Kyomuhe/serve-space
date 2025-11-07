@@ -48,7 +48,7 @@ const SideMenu = () => {
             <div className='h-px bg-gray-200'></div>
 
 
-            <nav className='flex flex-col gap-1'>
+            <nav className='flex flex-col'>
                 {mainMenuItems.map((item, index) => {
                     const Icon = item.icon;
                     const isActive = activePath === item.path;
@@ -78,7 +78,7 @@ const SideMenu = () => {
                 </div>
             )}
 
-            <nav className='flex flex-col gap-1'>
+            <nav className='flex flex-col'>
                 {otherMenuItems.map((item, index) => {
                     const Icon = item.icon;
                     const isActive = activePath === item.path;

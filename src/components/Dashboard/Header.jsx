@@ -1,4 +1,4 @@
-import { Bell, ChevronRight } from 'lucide-react'
+import { Bell, ChevronRight, Moon, Sun } from 'lucide-react'
 import profile from '../../assets/profile.png'
 import { useLocation } from 'react-router-dom';
 
@@ -22,6 +22,13 @@ const Header = () => {
             </div>
 
             <div className='flex items-center gap-2'>
+                <div className='bg-white rounded flex p-1 space-x-1 text-gray-600'>
+                    <div className='bg-gray-200 rounded p-1'>
+                        <Sun size={22} />
+                    </div>
+                    <Moon size={22} />
+
+                </div>
                 <button className="relative text-gray-600 bg-white p-2 rounded">
                     <Bell size={20} />
                     <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>

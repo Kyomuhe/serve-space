@@ -72,7 +72,7 @@ const Dashboard = () => {
                 <div className="flex-1">
                     <Events />
                 </div>
-                <div className="flex flex-col space-y-5 ml-auto">
+                <div className="flex flex-col space-y-5 ml-auto hidden md:block">
                     <Feedback />
                     <Notifications />
                 </div>
