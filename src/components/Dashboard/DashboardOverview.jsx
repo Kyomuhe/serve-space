@@ -38,7 +38,7 @@ export const Events = () => {
     return (
         <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-gray-900 text-lg">Events</h2>
-            <div className="flex flex-row gap-2 items-center flex-wrap">
+            <div className="flex flex-row gap-2 items-center flex-wrap hidden md:flex">
                 <button className="bg-white border border-gray-300 items-center justify-center text-sm text-gray-600 px-3 py-1.5 rounded-lg hover:bg-gray-50">Trending</button>
                 <button className="bg-white border border-gray-300 items-center justify-center text-sm text-gray-600 px-3 py-1.5 rounded-lg hover:bg-gray-50">Upcoming</button>
                 <button className="bg-white border border-gray-300 items-center justify-center text-sm text-gray-600 px-3 py-1.5 rounded-lg hover:bg-gray-50">Innovation</button>
@@ -58,12 +58,12 @@ export const Events = () => {
                 {Event.map((item) => (
                     <div
                         key={item.id}
-                        className="bg-white rounded-lg overflow-hidden flex shadow-sm border border-gray-200"
+                        className="bg-white rounded-lg overflow-hidden flex flex-col sm:flex-row shadow-sm border border-gray-200"
                     >
                         <img
                             src={item.image}
                             alt={item.title}
-                            className="w-40 h-auto object-cover flex-shrink-0"
+                            className="w-full sm:w-40 h-48 sm:h-auto object-cover flex-shrink-0"
                         />
 
                         <div className="flex flex-col flex-1 p-4">
@@ -72,8 +72,8 @@ export const Events = () => {
                                 <p className="text-sm text-gray-500">{item.description}</p>
                             </div>
 
-                            <div className="flex items-center justify-between mt-4">
-                                <div className="flex gap-4 text-sm text-gray-600">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-4">
+                                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-gray-600">
                                     <div className="flex items-center gap-1.5">
                                         <CalendarDays size={16} className="text-gray-400" />
                                         <span>{item.date}</span>
@@ -84,15 +84,14 @@ export const Events = () => {
                                     </div>
                                 </div>
 
-                                <button className="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-md text-sm font-medium hover:bg-blue-100">
+                                <button className="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-md text-sm font-medium hover:bg-blue-100 w-full sm:w-auto">
                                     View More
                                 </button>
                             </div>
                         </div>
                     </div>
                 ))}
-            </div>
-        </div>
+            </div>        </div>
     )
 }
 

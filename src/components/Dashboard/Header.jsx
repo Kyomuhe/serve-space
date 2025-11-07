@@ -17,13 +17,13 @@ const Header = () => {
 
     return (
         <div className="h-16 flex items-center justify-between px-6">
-            <div>
+            <div className='hidden md:block'>
                 <h1 className="font-medium text-2xl">{getPageTitle()}</h1>
             </div>
 
-            <div className='flex items-center gap-2'>
-                <div className='bg-white rounded flex p-1 space-x-1 text-gray-600'>
-                    <div className='bg-gray-200 rounded p-1'>
+            <div className='flex items-center gap-2 ml-auto sm:ml-0'>
+                <div className='bg-white rounded flex p-1 space-x-1 text-gray-600 hidden md:flex'>
+                    <div className='bg-gray-200 rounded p-1 '>
                         <Sun size={22} />
                     </div>
                     <Moon size={22} />

@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/serveSpaceLogo.png';
 import profile from '../../assets/profile.png';
-import { ChevronRight, Menu } from 'lucide-react';
+import { ChevronRight, Menu, X } from 'lucide-react';
 import { LayoutDashboard, Lightbulb, MessageSquare, Bell, Settings, HelpCircle, LogOut } from 'lucide-react';
 
 const SideMenu = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const mainMenuItems = [
         { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
@@ -32,21 +33,33 @@ const SideMenu = () => {
 
     const activePath = getActivePath();
 
-    return (
-        <div className={`${isCollapsed ? 'w-20' : 'w-64'} h-auto bg-white rounded-3xl p-6 flex flex-col gap-6 transition-all duration-300`}>
+    const handleNavigation = (path) => {
+        if (path) {
+            navigate(path);
+        }
+        setIsMobileMenuOpen(false);
+    };
+
+    const MenuContent = () => (
+        <>
             <div className='flex items-center justify-between'>
                 {!isCollapsed && (
                     <img src={logo} alt="servespace logo" className='w-32 h-auto' />
                 )}
                 <button
                     onClick={() => setIsCollapsed(!isCollapsed)}
-                    className='p-2  hover:bg-gray-100 rounded-lg transition-colors ml-auto'
+                    className='p-2 hover:bg-gray-100 rounded-lg transition-colors ml-auto hidden lg:block'
                 >
                     <Menu size={20} className='text-blue-600' />
                 </button>
+                <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className='p-2 hover:bg-gray-100 rounded-lg transition-colors lg:hidden'
+                >
+                    <X size={24} className='text-gray-600' />
+                </button>
             </div>
             <div className='h-px bg-gray-200'></div>
-
 
             <nav className='flex flex-col'>
                 {mainMenuItems.map((item, index) => {
@@ -55,11 +68,12 @@ const SideMenu = () => {
                     return (
                         <button
                             key={index}
-                            onClick={() => navigate(item.path)}
-                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${isActive
+                            onClick={() => handleNavigation(item.path)}
+                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
+                                isActive
                                     ? 'bg-blue-50 text-blue-600'
                                     : 'text-gray-700 hover:bg-gray-100'
-                                }`}
+                            }`}
                             title={isCollapsed ? item.label : ''}
                         >
                             <Icon size={20} className='flex-shrink-0' />
@@ -85,11 +99,12 @@ const SideMenu = () => {
                     return (
                         <button
                             key={index}
-                            onClick={() => navigate(item.path)}
-                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${isActive
+                            onClick={() => handleNavigation(item.path)}
+                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
+                                isActive
                                     ? 'bg-blue-50 text-blue-600'
                                     : 'text-gray-700 hover:bg-gray-100'
-                                }`}
+                            }`}
                             title={isCollapsed ? item.label : ''}
                         >
                             <Icon size={20} className='flex-shrink-0' />
@@ -123,7 +138,37 @@ const SideMenu = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </>
+    );
+
+    return (
+        <>
+            <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className='lg:hidden fixed top-4 left-4 z-40 p-3 bg-white rounded-lg shadow-lg hover:bg-gray-50 transition-colors'
+            >
+                <Menu size={20} className='text-blue-600' />
+            </button>
+
+            {isMobileMenuOpen && (
+                <div
+                    className='fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden'
+                    onClick={() => setIsMobileMenuOpen(false)}
+                />
+            )}
+
+            <div
+                className={`fixed top-1 left-0 h-full w-64 bg-white rounded-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+                    isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                } p-6 flex flex-col gap-6 shadow-2xl`}
+            >
+                <MenuContent />
+            </div>
+
+            <div className={`hidden lg:flex ${isCollapsed ? 'w-20' : 'w-64'} h-auto bg-white rounded-3xl p-6 flex-col gap-6 transition-all duration-300`}>
+                <MenuContent />
+            </div>
+        </>
     );
 };
 
