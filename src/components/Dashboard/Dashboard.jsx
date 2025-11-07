@@ -1,5 +1,5 @@
 import { Plus } from "lucide-react";
-import { Events } from "./DashboardOverview";
+import { Events, Feedback, Notifications } from "./DashboardOverview";
 
 const Dashboard = () => {
     const stats = [
@@ -33,20 +33,20 @@ const Dashboard = () => {
             color: 'text-gray-500',
         },
     ]
-    
+
     return (
         <div className="flex flex-col p-2 space-y-4">
             <div className="flex gap-6 items-start">
                 <div className="flex flex-col">
                     <h1 className="font-semibold text-3xl mb-2 ">Share your Ideas</h1>
-                    <p className="text-gray-500">Have an idea worth building?<br/>Submit it and start innovating</p>
+                    <p className="text-gray-500">Have an idea worth building?<br />Submit it and start innovating</p>
                 </div>
 
                 <div className="flex gap-3 flex-1 rounded bg-white p-3">
                     {stats.map((stat) => (
                         <div
                             key={stat.id}
-                            className="bg-cyan-100 shadow-lg rounded-lg p-2 flex-1"
+                            className="bg-cyan-100 shadow-xl rounded-lg p-2 flex-1"
                         >
                             <div className="flex flex-col items-center text-center">
                                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-3">
@@ -64,12 +64,20 @@ const Dashboard = () => {
                 </div>
 
                 <div className="bg-white rounded-lg border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-gray-400 gap-2 p-8 w-40">
-                    <Plus size={24}/>
+                    <Plus size={24} />
                     <p className="text-sm text-center">Create new Idea</p>
                 </div>
             </div>
-            <Events/>
-            
+            <div className="flex space-x-10">
+                <div className="flex-1">
+                    <Events />
+                </div>
+                <div className="flex flex-col space-y-5 ml-auto">
+                    <Feedback />
+                    <Notifications />
+                </div>
+            </div>
+
         </div>
     )
 }

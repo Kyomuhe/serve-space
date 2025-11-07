@@ -1,11 +1,24 @@
 import { Bell, ChevronRight } from 'lucide-react'
 import profile from '../../assets/profile.png'
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
+    const location = useLocation();
+
+    const getPageTitle = () => {
+        const pathMap = {
+            '/': 'Dashboard',
+            '/dashboard': 'Dashboard',
+            '/ideas': 'My Ideas',
+        };
+
+        return pathMap[location.pathname] || 'Dashboard';
+    };
+
     return (
         <div className="h-16 flex items-center justify-between px-6">
             <div>
-                <h1 className="font-medium text-2xl">Dashboard</h1>
+                <h1 className="font-medium text-2xl">{getPageTitle()}</h1>
             </div>
 
             <div className='flex items-center gap-2'>
