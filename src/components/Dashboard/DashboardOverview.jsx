@@ -62,7 +62,7 @@ export const Events = () => {
                         <img
                             src={item.image}
                             alt={item.title}
-                            className="w-36 h-full object-cover flex-shrink-0"
+                            className="w-36 h-auto object-cover flex-shrink-0"
                         />
 
                         <div className="flex flex-col flex-1 p-4">
