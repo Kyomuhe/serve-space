@@ -55,15 +55,15 @@ const Dashboard = () => {
                                         {stat.count}
                                     </span>
                                 </div>
-                                <h3 className="text-gray-900 font-semibold text-xs mb-1">
+                                <h2 className="text-gray-900 font-semibold text-xs mb-1">
                                     {stat.label}
-                                </h3>
+                                </h2>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="bg-white rounded-lg border-2 border-dashed border-blue-300 flex flex-col lg:flex-row xl:flex-col items-center justify-center text-gray-400 gap-2 p-6 lg:p-4 xl:p-8 w-full lg:w-40 lg:h-45">
+                <div className="bg-white rounded-lg border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-gray-400 gap-2 p-6 lg:p-4 xl:p-8 w-full lg:w-40 lg:h-45">
                     <Plus size={24} />
                     <p className="text-sm text-center">Create new Idea</p>
                 </div>

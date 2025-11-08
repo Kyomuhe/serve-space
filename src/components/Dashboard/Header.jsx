@@ -1,9 +1,11 @@
 import { Bell, ChevronRight, Moon, Sun } from 'lucide-react'
 import profile from '../../assets/profile.png'
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 const Header = () => {
     const location = useLocation();
+    const [selectedIcon, setSelectedIcon] = useState('sun');
 
     const getPageTitle = () => {
         const pathMap = {
@@ -23,10 +25,16 @@ const Header = () => {
 
             <div className='flex items-center gap-2 ml-auto'>
                 <div className='bg-white rounded flex p-1 space-x-1 text-gray-600'>
-                    <div className='bg-gray-200 rounded p-1'>
+                    <div
+                        className={selectedIcon === 'sun' ? 'bg-gray-200 rounded p-1' : 'rounded p-1'}
+                        onClick={() => setSelectedIcon('sun')}
+                    >
                         <Sun size={22} />
                     </div>
-                    <div className='p-1'>
+                    <div
+                        className={selectedIcon === 'moon' ? 'bg-gray-200 rounded p-1' : 'rounded p-1'}
+                        onClick={() => setSelectedIcon('moon')}
+                    >
                         <Moon size={22} />
                     </div>
                 </div>
@@ -37,12 +45,12 @@ const Header = () => {
                 <button className='flex items-center bg-white gap-3 h-10 hover:bg-gray-300 rounded-lg px-3 transition-colors'>
                     <img
                         src={profile}
-                        className='w-8 h-8 rounded-full object-cover'
+                        className='w-8 h-8 rounded-full'
                         alt="Profile"
                     />
                     <div className='hidden sm:block'>
                         <p className='text-sm'>Kyomuhendo</p>
-                        <p className='text-gray-400 text-xs'>HR Manager</p>
+                        <p className='text-gray-400 text-xs'>Freelancer</p>
                     </div>
                     <ChevronRight size={20} className='text-gray-400 hidden sm:block' />
                 </button>

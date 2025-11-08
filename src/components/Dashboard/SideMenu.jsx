@@ -100,8 +100,8 @@ const SideMenu = () => {
                             key={index}
                             onClick={() => handleNavigation(item.path)}
                             className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3'} px-3 py-2.5 rounded-lg transition-all ${isActive
-                                    ? 'bg-blue-50 text-blue-600'
-                                    : 'text-gray-700 hover:bg-gray-100'
+                                ? 'bg-blue-50 text-blue-600'
+                                : 'text-gray-700 hover:bg-gray-100'
                                 }`}
                             title={isCollapsed ? item.label : ''}
                         >
@@ -122,14 +122,14 @@ const SideMenu = () => {
                         alt="Profile"
                     />
                 ) : (
-                    <div className='flex items-center bg-cyan-200 rounded-lg p-3 gap-3 cursor-pointer hover:bg-blue-200 transition-colors shadow-2xl'>
+                    <div className='flex items-center bg-cyan-100 rounded-lg p-3 gap-3 cursor-pointer hover:bg-blue-200 transition-colors shadow-2xl'>
                         <img
-                            className='w-10 h-10 rounded-full object-cover flex-shrink-0'
+                            className='w-10 h-10 rounded-full shrink-0'
                             src={profile}
                             alt="Profile"
                         />
                         <div className='flex-1 min-w-0'>
-                            <p className='text-sm font-semibold text-gray-900'>Kyomuhendo Precious</p>
+                            <p className='text-sm font-semibold text-gray-900'>Precious kay</p>
                             <p className='text-xs text-gray-600'>Freelancer</p>
                         </div>
                         <ChevronRight size={18} className='text-gray-600' />
