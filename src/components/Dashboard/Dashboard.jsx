@@ -67,7 +67,8 @@ const Dashboard = () => {
                     <Plus size={24} />
                     <p className="text-sm text-center">Create new Idea</p>
                 </div>
-            </div>            <div className="flex space-x-10">
+            </div>
+            <div className="flex space-x-10">
                 <div className="flex-1">
                     <Events />
                 </div>

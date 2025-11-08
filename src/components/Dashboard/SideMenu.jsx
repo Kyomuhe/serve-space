@@ -69,16 +69,15 @@ const SideMenu = () => {
                         <button
                             key={index}
                             onClick={() => handleNavigation(item.path)}
-                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
-                                isActive
-                                    ? 'bg-blue-50 text-blue-600'
-                                    : 'text-gray-700 hover:bg-gray-100'
-                            }`}
+                            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3'} px-3 py-2.5 rounded-lg transition-all ${isActive
+                                ? 'bg-blue-50 text-blue-600'
+                                : 'text-gray-700 hover:bg-gray-100'
+                                }`}
                             title={isCollapsed ? item.label : ''}
                         >
                             <Icon size={20} className='shrink-0' />
                             {!isCollapsed && (
-                                <span className=' font-medium'>{item.label}</span>
+                                <span className='font-medium'>{item.label}</span>
                             )}
                         </button>
                     );
@@ -100,16 +99,15 @@ const SideMenu = () => {
                         <button
                             key={index}
                             onClick={() => handleNavigation(item.path)}
-                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
-                                isActive
+                            className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3'} px-3 py-2.5 rounded-lg transition-all ${isActive
                                     ? 'bg-blue-50 text-blue-600'
                                     : 'text-gray-700 hover:bg-gray-100'
-                            }`}
+                                }`}
                             title={isCollapsed ? item.label : ''}
                         >
                             <Icon size={20} className='shrink-0' />
                             {!isCollapsed && (
-                                <span className=' font-medium'>{item.label}</span>
+                                <span className='font-medium'>{item.label}</span>
                             )}
                         </button>
                     );
@@ -158,9 +156,8 @@ const SideMenu = () => {
             )}
 
             <div
-                className={`fixed top-1 left-0 h-full w-64 bg-white rounded-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
-                    isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                } p-6 flex flex-col gap-6 shadow-2xl`}
+                className={`fixed top-1 left-0 h-full w-64 bg-white rounded-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                    } p-6 flex flex-col gap-6 shadow-2xl`}
             >
                 <MenuContent />
             </div>
