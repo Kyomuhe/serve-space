@@ -17,17 +17,18 @@ const Header = () => {
 
     return (
         <div className="h-16 flex items-center justify-between px-6">
-            <div className='hidden md:block'>
+            <div className='hidden lg:block'>
                 <h1 className="font-medium text-2xl">{getPageTitle()}</h1>
             </div>
 
-            <div className='flex items-center gap-2 ml-auto sm:ml-0'>
-                <div className='bg-white rounded flex p-1 space-x-1 text-gray-600 hidden md:flex'>
-                    <div className='bg-gray-200 rounded p-1 '>
+            <div className='flex items-center gap-2 ml-auto'>
+                <div className='bg-white rounded flex p-1 space-x-1 text-gray-600'>
+                    <div className='bg-gray-200 rounded p-1'>
                         <Sun size={22} />
                     </div>
-                    <Moon size={22} />
-
+                    <div className='p-1'>
+                        <Moon size={22} />
+                    </div>
                 </div>
                 <button className="relative text-gray-600 bg-white p-2 rounded">
                     <Bell size={20} />
@@ -37,16 +38,14 @@ const Header = () => {
                     <img
                         src={profile}
                         className='w-8 h-8 rounded-full object-cover'
+                        alt="Profile"
                     />
-                    <div>
-                        <p className=' text-sm'>Kyomuhendo</p>
+                    <div className='hidden sm:block'>
+                        <p className='text-sm'>Kyomuhendo</p>
                         <p className='text-gray-400 text-xs'>HR Manager</p>
-
                     </div>
-                    <ChevronRight size={20} className='text-gray-400' />
-
+                    <ChevronRight size={20} className='text-gray-400 hidden sm:block' />
                 </button>
-
             </div>
         </div>
     )

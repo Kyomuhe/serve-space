@@ -36,13 +36,14 @@ const Dashboard = () => {
 
     return (
         <div className="flex flex-col p-2 space-y-4">
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
+            <div className="flex flex-col lg:flex-row gap-6 items-start">
                 <div className="flex flex-col">
-                    <h1 className="font-semibold text-3xl mb-2 ">Share your Ideas</h1>
-                    <p className="text-gray-500">Have an idea worth building?<br />Submit it and start innovating</p>
+                    <h1 className="font-semibold text-3xl mb-2">Share your Ideas</h1>
+
+                    <p className="text-gray-500 font-sans">Have an idea worth building?<br />Submit it and start innovating</p>
                 </div>
 
-                <div className="grid grid-cols-2 w-full md:flex gap-3 flex-1 rounded bg-white p-3">
+                <div className="grid grid-cols-2 w-full lg:flex gap-3 flex-1 rounded bg-white p-3">
                     {stats.map((stat) => (
                         <div
                             key={stat.id}
@@ -62,12 +63,11 @@ const Dashboard = () => {
                     ))}
                 </div>
 
-                <div className="bg-white rounded-lg border-2 border-dashed border-blue-300 flex flex-col sm:flex-row lg:flex-col items-center justify-center text-gray-400 gap-2 p-6 sm:p-4 lg:p-8 w-full sm:w-40">
+                <div className="bg-white rounded-lg border-2 border-dashed border-blue-300 flex flex-col lg:flex-row xl:flex-col items-center justify-center text-gray-400 gap-2 p-6 lg:p-4 xl:p-8 w-full lg:w-40 lg:h-45">
                     <Plus size={24} />
                     <p className="text-sm text-center">Create new Idea</p>
                 </div>
-            </div>
-            <div className="flex space-x-10">
+            </div>            <div className="flex space-x-10">
                 <div className="flex-1">
                     <Events />
                 </div>

@@ -76,9 +76,9 @@ const SideMenu = () => {
                             }`}
                             title={isCollapsed ? item.label : ''}
                         >
-                            <Icon size={20} className='flex-shrink-0' />
+                            <Icon size={20} className='shrink-0' />
                             {!isCollapsed && (
-                                <span className='text-sm font-medium'>{item.label}</span>
+                                <span className=' font-medium'>{item.label}</span>
                             )}
                         </button>
                     );
@@ -107,9 +107,9 @@ const SideMenu = () => {
                             }`}
                             title={isCollapsed ? item.label : ''}
                         >
-                            <Icon size={20} className='flex-shrink-0' />
+                            <Icon size={20} className='shrink-0' />
                             {!isCollapsed && (
-                                <span className='text-sm font-medium'>{item.label}</span>
+                                <span className=' font-medium'>{item.label}</span>
                             )}
                         </button>
                     );

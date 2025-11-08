@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
     return (
-        <div className="flex h-screen bg-gray-200 overflow-hidden p-3">
+        <div className="flex h-screen bg-slate-100 overflow-hidden p-3">
             <SideMenu />
             <div className="flex-1 flex flex-col overflow-hidden">
                 <Header />
